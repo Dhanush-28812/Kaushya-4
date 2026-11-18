@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Kaushya | Better tools for the cocoon stage of silk</title>
+<meta name="description" content="Team Kaushya builds low-cost tools for mounting, harvesting and sorting silkworm cocoons.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="rail" aria-hidden="true"><i></i></div>
+<header class="top">
+  <a class="brand" href="#top">Team Kaushya</a>
+  <nav><a href="#silk">Silk</a><a href="#cycle">Life cycle</a><a href="#solutions">Our tools</a><a href="#field">Field work</a><a href="#team">Team</a></nav>
+</header>
+<main id="top">
+<section class="hero">
+  <p class="lede-small">Wisdom World School, Wakad</p>
+  <h1>One cocoon holds a single thread, hundreds of metres long. We help farmers get it out whole.</h1>
+  <p class="lede">Between the mountage and the reeling unit, cocoons are harvested and sorted by hand. Team Kaushya is building three low-cost tools to make that stage faster, cleaner and fairer to the farmer.</p>
+  <a class="btn" href="#solutions">See our three tools</a>
+</section>
+
+<section id="silk">
+  <h2>What sericulture is</h2>
+  <div class="cols">
+    <p>Sericulture is the farming of silkworms (<i>Bombyx mori</i>) for silk. It combines three skills: growing mulberry, rearing the worms, and processing cocoons into raw silk.</p>
+    <p>Silk is a protein fibre. Its core is fibroin, held together by a gummy coating called sericin that is removed later, during degumming.</p>
+    <p>India is the second largest silk producer in the world and the only country that produces all four commercial types: mulberry, tasar, eri and muga. Mulberry silk makes up most of the output, and Karnataka leads in it.</p>
+    <p>Most rearing is done by small farmers at home, which is why a cheap, simple tool matters more than an expensive machine.</p>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2>The silkworm life cycle</h2>
+  <p class="sub">Choose a stage. Our work sits at the spinning and cocoon stages.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-i="0">Egg</button>
+    <button role="tab" aria-selected="false" data-i="1">Larva</button>
+    <button role="tab" aria-selected="false" data-i="2">Spinning</button>
+    <button role="tab" aria-selected="false" data-i="3">Cocoon</button>
+    <button role="tab" aria-selected="false" data-i="4">Moth</button>
+  </div>
+  <div class="panel" id="panel" role="tabpanel"></div>
+</section>
+
+<section id="quality">
+  <h2>What makes a good cocoon</h2>
+  <p class="sub">Reelers pay by quality, so sorting decides how much the farmer earns. Graders look for these faults:</p>
+  <dl class="faults">
+    <div><dt>Double cocoon</dt><dd>Two worms spun together. The tangled thread cannot be reeled as a clean filament.</dd></div>
+    <div><dt>Stained cocoon</dt><dd>Discoloured by a dead worm or moisture. It lowers the colour and grade of the silk.</dd></div>
+    <div><dt>Pierced cocoon</dt><dd>Damaged by a pest or an emerged moth. The continuous thread is broken.</dd></div>
+    <div><dt>Thin or flimsy shell</dt><dd>Too little silk, so poor reeling yield.</dd></div>
+    <div><dt>Malformed cocoon</dt><dd>Irregular size or shape, often caused by crowded or uneven mounting.</dd></div>
+  </dl>
+  <p class="note">Uniform cocoons start at mounting. That is why our work begins with the chandrika, not the sorter.</p>
+</section>
+
+<section id="solutions">
+  <h2>Our three tools</h2>
+  <p class="sub">One tool for each stage. All three are in the prototyping phase.</p>
+  <article class="tool">
+    <h3>Aakar</h3><span class="stage">Mounting</span>
+    <p>A collapsible plastic chandrika that keeps the familiar hexagonal cell shape. Honeycomb panels are joined by hinges and sit on a frame with triangular ridges. Taken off the frame, it folds flat for storage. The aim is uniform cocoon size and shape.</p>
+  </article>
+  <article class="tool">
+    <h3>Nivara</h3><span class="stage">Harvesting</span>
+    <p>The plastic chandrika rests on a frame with triangular ridges so it takes equal folds. A matching panel presses it down from above, and a scraper plate with matching triangles is pushed across to lift the cocoons off into a collection tray. Hired harvesting labour costs farmers about ₹30,000 a year, based on what they told us.</p>
+  </article>
+  <article class="tool">
+    <h3>Vidura</h3><span class="stage">Sorting</span>
+    <p>A sensor-based sorter. A hopper and air-lock gate release one cocoon at a time. Three TCS34725 colour sensors and an HX711 load cell read colour and weight, an ESP32 decides, and the cocoon is routed into a good or bad bin.</p>
+  </article>
+</section>
+
+<section id="field">
+  <h2>What we learned in the field</h2>
+  <ul class="plain">
+    <li>Visited KSSRDI, Bangalore, and CSTRI, Mysore.</li>
+    <li>Spoke with Dr Sunil Rathode, Scientist B, Central Silk Board, Bangalore.</li>
+    <li>Collected inputs from farmers in Karnataka and Maharashtra.</li>
+    <li>Reworked Nivara after learning that the pin-and-plate harvesters built for square-cell rotary mountages cannot work on a folding hexagonal chandrika.</li>
+  </ul>
+</section>
+
+<section id="team">
+  <h2>Team and contact</h2>
+  <p>Team Kaushya is a student-led startup at Wisdom World School, Wakad, entering a national innovation competition under the theme Empowering Hands.</p>
+  <p class="todo">Add team member names, roles and a contact email here.</p>
+  <p><a class="btn" href="https://github.com/Dhanush-28812/Kaushya">View on GitHub</a></p>
+</section>
+</main>
+<footer>© Team Kaushya. Prototypes in development.</footer>
+<script src="script.js"></script>
+</body>
+</html>
