@@ -3,80 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Team Kaushya Lab | Run our machines</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Team Kaushya | Follow one cocoon</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="story.css">
 </head>
 <body>
-<aside>
-  <h1 class="logo">Team Kaushya<small>Machine lab</small></h1>
-  <nav>
-    <button data-go="home">Overview</button>
-    <button data-go="aakar">Aakar: mounting</button>
-    <button data-go="nivara">Nivara: harvesting</button>
-    <button data-go="vidura">Vidura: sorting</button>
-    <button data-go="learn">Sericulture basics</button>
-  </nav>
-</aside>
-<main>
-<section class="pane" id="home">
-  <h2>Three machines for the cocoon stage of silk. Run each one here.</h2>
-  <p>Silkworms spin cocoons on a mountage. Farmers then harvest them by hand and sort the good from the bad. Team Kaushya, from Wisdom World School, Wakad, is prototyping one low-cost tool for each step. The simulations are simplified models of our designs, not measured results.</p>
-  <div class="go">
-    <button data-go="aakar">Fold the chandrika</button>
-    <button data-go="nivara">Harvest cocoons</button>
-    <button data-go="vidura">Sort cocoons</button>
-  </div>
-  <h3>Field work behind the designs</h3>
-  <ul>
-    <li>Visits to KSSRDI (Bangalore) and CSTRI (Mysore)</li>
-    <li>Insight from Dr Sunil Rathode, Scientist B, Central Silk Board</li>
-    <li>Inputs from farmers in Karnataka and Maharashtra, who put hired harvesting labour at about ₹30,000 a year</li>
-  </ul>
-  <p class="todo">Add team member names and a contact email here. All three machines are still being prototyped.</p>
+<header class="hero">
+  <div class="zari"></div>
+  <p class="kicker">Team Kaushya, Wisdom World School, Wakad</p>
+  <h1>Follow one cocoon.</h1>
+  <p class="lede">A silkworm spins one unbroken thread. Before it reaches the loom, its cocoon is mounted, harvested and sorted, mostly by hand. Scroll down the cocoon's journey and run the three machines we are building for each step.</p>
+  <p class="small">The simulations are simplified models of our designs. The machines are still prototypes.</p>
+</header>
+
+<section class="band b1" id="aakar">
+  <div class="txt"><h2>Aakar</h2><p class="role">Stage 1: mounting</p>
+  <p>Hinged hexagonal-cell panels of plastic. Set on a frame with triangular ridges they zigzag into shape and give every worm an equal cell, so cocoons come out uniform. Lifted off, they fold flat for storage.</p></div>
+  <div class="sim"><canvas id="ca" width="760" height="380" aria-label="Aakar fold simulation"></canvas>
+  <label class="ctl">Off frame <input id="fold" type="range" min="0" max="100" value="100"> On frame</label>
+  <p class="read" id="ar"></p></div>
 </section>
 
-<section class="pane" id="aakar" hidden>
-  <h2>Aakar: the collapsible chandrika</h2>
-  <p>Hexagonal-cell panels are joined by hinges. Placed on a frame with triangular ridges, they take its zigzag shape and give each worm an equal cell. Off the frame, they fold flat for storage.</p>
-  <canvas id="ca" width="760" height="380" aria-label="Aakar fold simulation"></canvas>
-  <label class="ctl">Off frame (flat) <input id="fold" type="range" min="0" max="100" value="100"> On frame</label>
-  <p class="read" id="ar"></p>
+<section class="band b2" id="nivara">
+  <div class="txt"><h2>Nivara</h2><p class="role">Stage 2: harvesting</p>
+  <p>The plastic chandrika sits on triangular ridges so it keeps equal folds. A scraper with matching triangles is pushed across by hand and the cocoons fall into the tray. Hired harvesting labour costs farmers about ₹30,000 a year, they told us.</p></div>
+  <div class="sim"><canvas id="cn" width="760" height="380" aria-label="Nivara harvesting simulation"></canvas>
+  <div class="ctl"><button id="np">Push scraper</button><button id="nr">Reset</button><label>Speed <input id="ns" type="range" min="40" max="260" value="120"></label></div>
+  <p class="read" id="nread"></p></div>
 </section>
 
-<section class="pane" id="nivara" hidden>
-  <h2>Nivara: the scraper harvester</h2>
-  <p>The plastic chandrika rests on triangular ridges so it keeps equal folds. A scraper plate with matching triangles is pushed across by hand and the cocoons drop into the tray.</p>
-  <canvas id="cn" width="760" height="380" aria-label="Nivara harvesting simulation"></canvas>
-  <div class="ctl"><button id="np">Push scraper</button><button id="nr">Reset</button>
-  <label>Speed <input id="ns" type="range" min="40" max="260" value="120"></label></div>
-  <p class="read" id="nread"></p>
+<section class="band b3" id="vidura">
+  <div class="txt"><h2>Vidura</h2><p class="role">Stage 3: sorting</p>
+  <p>An air-lock gate releases one cocoon at a time. Three TCS34725 colour sensors and a load cell read it, an ESP32 decides, and the cocoon goes to the good or bad bin. In this model a stained shell, or one under 1.4 g, is bad.</p></div>
+  <div class="sim"><canvas id="cv" width="760" height="380" aria-label="Vidura sorting simulation"></canvas>
+  <div class="ctl"><button id="vp">Pause</button><label>Share of bad cocoons <input id="dr" type="range" min="0" max="80" value="25"></label></div>
+  <p class="read" id="vread"></p></div>
 </section>
 
-<section class="pane" id="vidura" hidden>
-  <h2>Vidura: the colour and weight sorter</h2>
-  <p>An air-lock gate lets one cocoon through at a time. Colour sensors and a load cell read it, the ESP32 decides, and the cocoon is routed to the good or bad bin. In this model, a stained shell or a weight under 1.4 g counts as bad.</p>
-  <canvas id="cv" width="760" height="380" aria-label="Vidura sorting simulation"></canvas>
-  <div class="ctl"><button id="vp">Pause</button>
-  <label>Share of bad cocoons <input id="dr" type="range" min="0" max="80" value="25"></label></div>
-  <p class="read" id="vread"></p>
-</section>
-
-<section class="pane" id="learn" hidden>
-  <h2>Sericulture basics</h2>
-  <p>Sericulture is the farming of silkworms (<i>Bombyx mori</i>) for silk. A single cocoon is one continuous filament, so a broken or tangled cocoon loses value. India produces all four commercial silks: mulberry, tasar, eri and muga.</p>
-  <h3>From egg to cocoon</h3>
+<section class="learn">
+  <h2>Sericulture in five steps</h2>
   <ol>
-    <li>Eggs are incubated for about 10 days.</li>
-    <li>The larva eats mulberry leaves for about four weeks and moults four times.</li>
-    <li>Grown worms move to a chandrika and spin for two to three days.</li>
-    <li>Cocoons are harvested about five to seven days after mounting, before the moth emerges.</li>
-    <li>Good cocoons are sorted and sent for reeling. A few are kept for seed.</li>
+    <li><b>Egg.</b> Incubated about 10 days until they hatch.</li>
+    <li><b>Larva.</b> Eats mulberry leaves for about four weeks and moults four times.</li>
+    <li><b>Spinning.</b> Moved to a chandrika, it spins for two to three days.</li>
+    <li><b>Cocoon.</b> Harvested about five to seven days after mounting, before the moth emerges.</li>
+    <li><b>Reeling.</b> Good cocoons are sorted and sent to be reeled into raw silk.</li>
   </ol>
-  <h3>Cocoons that get rejected</h3>
-  <ul><li>Double cocoons, from two worms spinning together</li><li>Stained cocoons</li><li>Pierced cocoons</li><li>Thin or flimsy shells</li><li>Misshapen cocoons</li></ul>
+  <p>India is the only country producing all four commercial silks: mulberry, tasar, eri and muga. Cocoons get rejected for being double, stained, pierced, thin or misshapen.</p>
 </section>
-</main>
-<script src="script.js"></script>
+
+<section class="field">
+  <h2>Where our designs come from</h2>
+  <p>Visits to KSSRDI (Bangalore) and CSTRI (Mysore). Insight from Dr Sunil Rathode, Scientist B, Central Silk Board. Inputs from farmers in Karnataka and Maharashtra.</p>
+  <p class="todo">Add team member names and a contact email here.</p>
+  <div class="zari"></div>
+</section>
+<script src="story.js"></script>
 </body>
 </html>

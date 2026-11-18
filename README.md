@@ -1,3 +1,4 @@
-# Team Kaushya machine lab
-Open index.html in a browser. Upload all files to a GitHub repo root for GitHub Pages.
-Edit the team and contact line in index.html. Simulations are simplified models of the designs.
+# Team Kaushya: Follow one cocoon
+Open index.html in a browser. Files: index.html, story.css, story.js.
+These file names differ from the earlier versions, so keep all three together and replace the old index.html.
+Edit the team and contact line in index.html.
